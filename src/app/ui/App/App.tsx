@@ -1,11 +1,21 @@
+import {selectThemeMode} from "@/app/model/app-slice";
 import {Routing} from "@/app/routing/Routing";
+import {ThemeProvider} from "@/app/ui/ThemeProvider/ThemeProvider";
+import {Header} from "@/common/components";
+import {useSelector} from "react-redux";
 import s from "./App.module.css"
+
 function App() {
-  return (
-      <div className={s.layout}>
-          <Routing />
-      </div>
-  )
+    const themeMode = useSelector(selectThemeMode)
+
+    return (
+        <ThemeProvider themeMode={themeMode}>
+            <div className={s.app}>
+                <Header/>
+                <Routing/>
+            </div>
+        </ThemeProvider>
+    )
 }
 
 export default App
