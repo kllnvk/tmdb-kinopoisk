@@ -1,4 +1,9 @@
-.layout {
-    max-width: 1186px;
-    margin: 0 auto 200px;
+.app {
+    max-width: 1440px;
+    margin: 0 auto 100px;
+}
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
 }

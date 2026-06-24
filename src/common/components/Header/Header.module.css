@@ -1,0 +1,73 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+}
+
+.logo {
+    height: 24px;
+    --grad-start: #90cea1;
+    --grad-mid: #3cbec9;
+    --grad-end: #00b3e5;
+    transition: all 0.3s ease;
+}
+
+.logoLink {
+    display: block;
+    width: 192px;
+    height: 24px;
+}
+
+.logoLink:hover .logo {
+    --grad-start: #38eaf1;
+    --grad-mid: #35e6e6;
+    --grad-end: #24c0ec;
+    transform: scale(1.05);
+}
+
+.list {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.link {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--text-primary);
+    font-size: 18px;
+    padding: 6px 10px;
+    transition: all 0.4s ease;
+}
+
+.link:hover {
+    color: var(--text-secondary)
+}
+
+.link.active {
+    border-color: var(--link-bg-color);
+    background-color: var(--link-bg-color);
+    border-radius: 14px;
+}
+
+.themeButton {
+    font-size: 18px;
+    padding: 14px 14px;
+    background-color: var(--bg-button-primary);
+    border-radius: 50px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+
+}
+
+.themeButton:hover {
+    padding: 14px 14px;
+    border-radius: 50px;
+    border-color: var(--border-theme-button-primary);
+    transform: scale(1.05);
+}
+
+
+

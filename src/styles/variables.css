@@ -1,0 +1,19 @@
+:root {
+    --bg-primary: rgb(255, 255, 255);
+    --text-primary: #1a1a1a;
+    --text-secondary: #003bd3;
+    --link-bg-color: rgb(165, 165, 165, 0.3);
+    --border-theme-button-primary: #003bd3;
+    --bg-button-primary: rgb(239, 239, 239);
+
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+    --bg-primary: rgb(25, 32, 50,0.9);
+    --text-primary: #ffffff;
+    --text-secondary: #003bd3;
+    --link-bg-color: rgb(165, 165, 165, 0.3);
+    --border-theme-button-primary: #003bd3;
+    --bg-button-primary: rgb(25, 32, 50);
+}
