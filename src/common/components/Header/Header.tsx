@@ -1,16 +1,16 @@
 import {changeThemeModeAC, selectThemeMode} from "@/app/model/app-slice";
-import {Path} from "@/app/routing/Routing";
 import {Logo} from "@/common/components";
+import {PATH} from "@/common/constants";
 import {useDispatch, useSelector} from "react-redux";
 import { NavLink } from 'react-router'
 import s from './Header.module.css'
 
 const navItems = [
-    { to: Path.Main, label: 'Main' },
-    { to: Path.Movies, label: 'Category Movies' },
-    { to: Path.Filtered, label: 'Filtered Movies' },
-    { to: Path.Search, label: 'Search' },
-    { to: Path.Favorites, label: 'Favorites' },
+    { to: PATH.Main, label: 'Main' },
+    { to: PATH.Movies, label: 'Category Movies' },
+    { to: PATH.Filtered, label: 'Filtered Movies' },
+    { to: PATH.Search, label: 'Search' },
+    { to: PATH.Favorites, label: 'Favorites' },
 ]
 
 export const Header = () => {

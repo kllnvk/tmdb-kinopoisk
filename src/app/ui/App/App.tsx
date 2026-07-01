@@ -12,7 +12,9 @@ function App() {
         <ThemeProvider themeMode={themeMode}>
             <div className={s.app}>
                 <Header/>
-                <Routing/>
+                <main className={s.main}>
+                    <Routing/>
+                </main>
             </div>
         </ThemeProvider>
     )

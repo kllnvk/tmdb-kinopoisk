@@ -9,5 +9,6 @@ export const baseApi = createApi({
             return headers
         },
     }),
+    keepUnusedDataFor: 300,
     endpoints: () => ({}),
 })

@@ -1,0 +1,21 @@
+.fullWidthSection {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    height: 700px;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.textContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    left: 10px;
+}

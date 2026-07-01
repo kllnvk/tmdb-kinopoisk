@@ -5,7 +5,11 @@
     --link-bg-color: rgb(165, 165, 165, 0.3);
     --border-theme-button-primary: #003bd3;
     --bg-button-primary: rgb(239, 239, 239);
-
+    --color-yellow-400: #facc15;
+    --color-black: black;
+    --color-white: #ffffff;
+    --color-red: #ea551f;
+    --color-green: #5cb110;
 }
 
 /* Dark theme */
@@ -16,4 +20,9 @@
     --link-bg-color: rgb(165, 165, 165, 0.3);
     --border-theme-button-primary: #003bd3;
     --bg-button-primary: rgb(25, 32, 50);
+    --color-yellow-400: #facc15;
+    --color-black: black;
+    --color-white: #ffffff;
+    --color-red: #ea551f;
+    --color-green: #5cb110;
 }

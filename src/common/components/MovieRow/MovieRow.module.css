@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 18px;
+}
+
+.button {
+    background-color: var(--bg-button-primary);
+    width: 120px;
+    height: 35px;
+    border-radius: 15px;
+    color: var(--text-primary);
+}
+
+.button:hover {
+    border: var(--border-theme-button-primary) solid 2px;
+    transition: 0.2s ease;
+    transform: scale(1.05);
+}
+
+.cardRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
