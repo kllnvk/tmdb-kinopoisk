@@ -1,0 +1,19 @@
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.pageSection {
+    padding-bottom: 64px;
+}
+
+.mainSection {
+    padding-bottom: 64px;
+}
+
+.rowsSections {
+    display: flex;
+    flex-direction: column;
+    gap: 54px;
+}

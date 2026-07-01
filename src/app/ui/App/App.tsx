@@ -1,7 +1,7 @@
 import {selectThemeMode} from "@/app/model/app-slice";
 import {Routing} from "@/app/routing/Routing";
 import {ThemeProvider} from "@/app/ui/ThemeProvider/ThemeProvider";
-import {Header} from "@/common/components";
+import {Footer, Header} from "@/common/components";
 import {useSelector} from "react-redux";
 import s from "./App.module.css"
 
@@ -15,6 +15,7 @@ function App() {
                 <main className={s.main}>
                     <Routing/>
                 </main>
+                <Footer/>
             </div>
         </ThemeProvider>
     )
