@@ -1,1 +1,1 @@
-export {THEME_KEY, BACKDROP_PATH, PATH, POSTER_PATH, FAVORITES_KEY} from './constants'
+export {THEME_KEY, BACKDROP_PATH, PATH, POSTER_PATH, FAVORITES_KEY, navItems, categories} from './constants'
