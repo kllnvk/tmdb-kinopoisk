@@ -10,6 +10,7 @@
     --color-white: #ffffff;
     --color-red: #ea551f;
     --color-green: #5cb110;
+    --bg-footer-primary: rgb(255, 247, 247, 0.8);
 }
 
 /* Dark theme */
@@ -25,4 +26,5 @@
     --color-white: #ffffff;
     --color-red: #ea551f;
     --color-green: #5cb110;
+    --bg-footer-primary: rgb(14, 20, 28, 0.5);
 }

@@ -1,17 +1,15 @@
 .app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     overflow-x: hidden;
 }
 
 .main {
-    max-width: 1440px;
-    margin: 0 auto;
+    flex: 1;
 }
 
 body {
     background: var(--bg-primary);
     color: var(--text-primary);
-}
-
-section {
-    margin-bottom: 60px;
 }
