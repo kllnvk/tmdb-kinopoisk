@@ -1,8 +1,9 @@
 .card {
     display: flex;
     flex-direction: column;
-    gap: 12px;
     width: 185px;
+    height: 100%;
+    gap: 16px;
 }
 
 .posterFrame{
@@ -10,13 +11,16 @@
     width: 100%;
     position: relative;
     overflow: hidden;
-
+    aspect-ratio: 2/3;
+    background-color: #1a1a1a;
+    flex-shrink: 0;
 }
 .posterImage {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: 0.2s ease;
+    display: block;
 }
 
 .posterImage:hover {
@@ -26,6 +30,7 @@
 .posterLink {
     font-size: 18px;
     font-weight: bold;
+    display: inline-block;
 }
 
 .posterLink:hover {

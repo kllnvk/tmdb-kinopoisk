@@ -28,3 +28,5 @@ export const categories = [
     {path: '/movies/now_playing', label: 'Now Playing movies'},
 ] as const
 
+export const POSTER_NULL = "https://placehold.co/185x285?text=No%20poster&font=roboto"
+

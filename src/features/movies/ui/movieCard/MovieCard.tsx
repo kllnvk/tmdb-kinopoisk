@@ -1,6 +1,6 @@
 import {selectFavorites, toggleFavoriteAC} from "@/app/model/app-slice";
 import {FavoriteButton} from "@/common/components";
-import {POSTER_PATH} from "@/common/constants";
+import {POSTER_NULL, POSTER_PATH} from "@/common/constants";
 import {useMemo} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import s from "./MovieCard.module.css"
@@ -41,7 +41,7 @@ export const MovieCard = ({movieId, posterUrl, title, voteAverage}: Props) => {
         <article className={s.card}>
             <div className={s.posterFrame}>
                 <a>
-                    <img className={s.posterImage} src={`${POSTER_PATH}${posterUrl}`}/>
+                    <img className={s.posterImage} src={posterUrl ? `${POSTER_PATH}${posterUrl}` : POSTER_NULL} alt={"Poster"}/>
                     <span className={`${s.rating} ${getRatingClass(voteAverage)}`}>{(voteAverage).toFixed(1)}</span>
                 </a>
                 <FavoriteButton isFavorite={isFavorite} onToggle={toggleFavorite} className={s.favoriteButton}/>

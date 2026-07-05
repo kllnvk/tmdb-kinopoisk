@@ -3,3 +3,22 @@
     grid-template-columns: repeat(6, 1fr);
     gap: 20px;
 }
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    padding-block: 32px;
+}

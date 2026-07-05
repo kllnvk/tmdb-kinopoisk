@@ -6,11 +6,14 @@ import s from "./FavoritePage.module.css"
 export const FavoritesPage = () => {
     const favorites = useSelector(selectFavorites);
 
+    const hasFavorites = favorites.length > 0;
 
     return (
-        <div>
+        <div className={s.container}>
+            <div className={s.wrapper}>
+            <section className={s.page}>
             <h1>Favorites</h1>
-            <div className={s.favorites}>
+                {hasFavorites ? <div className={s.favorites}>
                 {favorites.length === 0 ?
                     <h3>Add movies to favorites to see them on this page.</h3> : favorites.map(m => {
                         return (
@@ -18,6 +21,8 @@ export const FavoritesPage = () => {
                                        posterUrl={m.posterUrl}/>
                         )
                     })}
+            </div> : <p>Add movies to favorites to see them on this page.</p>}
+            </section>
             </div>
         </div>
     )

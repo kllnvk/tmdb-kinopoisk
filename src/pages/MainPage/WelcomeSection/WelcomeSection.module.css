@@ -12,6 +12,9 @@
 }
 
 .textContainer {
+    padding-left: 100px;
+    max-width: 1440px;
+    width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;

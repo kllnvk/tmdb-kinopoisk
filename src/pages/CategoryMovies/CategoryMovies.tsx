@@ -1,14 +1,17 @@
+import {Pagination} from "@/common/components/Pagintation/Pagination";
 import {categories} from "@/common/constants";
 import {useGetMoviesByCategoryQuery} from "@/features/movies/api/moviesApi";
 import type {Category} from "@/features/movies/api/moviesApi.types";
 import {MovieCard} from "@/features/movies/ui/movieCard/MovieCard";
+import {useState} from "react";
 import {NavLink, useParams} from "react-router";
 import s from "./CategoryMovies.module.css"
 
 export const CategoryPage = () => {
 
     const {category = "popular"} = useParams<{ category: Category }>()
-    const {data} = useGetMoviesByCategoryQuery({category, params: {page: 1}});
+    const [page, setPages] = useState(1)
+    const {data} = useGetMoviesByCategoryQuery({category, params: {page: page}});
 
 
     return (
@@ -38,6 +41,7 @@ export const CategoryPage = () => {
                         ))}
                     </section>
                 </div>
+                <Pagination currentPage={page} pagesCount={data?.total_pages === undefined ? 0 : data?.total_pages} setCurrentPage={setPages}/>
             </section>
         </div>
     )
