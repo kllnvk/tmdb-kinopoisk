@@ -13,7 +13,9 @@ function App() {
             <div className={s.app}>
                 <Header/>
                 <main className={s.main}>
+                    <div className={s.wrapper}>
                     <Routing/>
+                    </div>
                 </main>
                 <Footer/>
             </div>

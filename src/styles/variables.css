@@ -3,7 +3,7 @@
     --text-primary: #1a1a1a;
     --text-secondary: #003bd3;
     --link-bg-color: rgb(165, 165, 165, 0.3);
-    --border-theme-button-primary: rgb(0, 125, 255, 0.7);
+    --border-theme-button-primary: rgba(19, 75, 220, 0.5);
     --bg-button-primary: rgb(239, 239, 239);
     --color-yellow-400: #facc15;
     --color-black: black;
@@ -11,6 +11,7 @@
     --color-red: #ea551f;
     --color-green: #5cb110;
     --bg-footer-primary: rgb(255, 247, 247, 0.8);
+    --search-button: rgb(75, 118, 232);
 }
 
 /* Dark theme */
@@ -19,7 +20,7 @@
     --text-primary: #ffffff;
     --text-secondary: #003bd3;
     --link-bg-color: rgb(165, 165, 165, 0.3);
-    --border-theme-button-primary: rgb(0, 125, 255, 0.7);
+    --border-theme-button-primary: rgba(19, 75, 220, 0.7);
     --bg-button-primary: rgb(25, 32, 50);
     --color-yellow-400: #facc15;
     --color-black: black;
@@ -27,4 +28,5 @@
     --color-red: #ea551f;
     --color-green: #5cb110;
     --bg-footer-primary: rgb(14, 20, 28, 0.5);
+    --search-button: rgb(75, 118, 232);
 }

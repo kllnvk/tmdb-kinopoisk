@@ -1,4 +1,3 @@
-
 export const getRandomItem = <T>(array: T[]): T | undefined => {
     if (!array || array.length === 0) return undefined
     const randomIndex = Math.floor(Math.random() * array.length)

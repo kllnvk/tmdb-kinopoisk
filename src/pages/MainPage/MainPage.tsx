@@ -1,6 +1,6 @@
 import {MovieRow} from "@/common/components";
 import {BACKDROP_PATH} from "@/common/constants";
-import {getRandomItem} from "@/common/utils/getRandomItem";
+import {getRandomItem} from "@/common/utils";
 import {useGetMoviesByCategoryQuery} from "@/features/movies/api/moviesApi";
 import {WelcomeSection} from "@/pages/MainPage/WelcomeSection/WelcomeSection";
 import s from './MainPage.module.css'
