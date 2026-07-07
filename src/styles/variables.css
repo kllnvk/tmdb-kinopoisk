@@ -12,6 +12,8 @@
     --color-green: #5cb110;
     --bg-footer-primary: rgb(255, 247, 247, 0.8);
     --search-button: rgb(75, 118, 232);
+    --button-border-color: rgb(181, 178, 178);
+    --spanText-primary: #4b5563;
 }
 
 /* Dark theme */
@@ -29,4 +31,5 @@
     --color-green: #5cb110;
     --bg-footer-primary: rgb(14, 20, 28, 0.5);
     --search-button: rgb(75, 118, 232);
+    --spanText-primary: #94a3b8;
 }

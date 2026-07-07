@@ -40,8 +40,8 @@ export const MovieCard = ({movieId, posterUrl, title, voteAverage}: Props) => {
     return (
         <article className={s.card}>
             <div className={s.posterFrame}>
-                <a>
-                    <img className={s.posterImage} src={posterUrl ? `${POSTER_PATH}${posterUrl}` : POSTER_NULL} alt={"Poster"}/>
+                <a href={`/movie/${movieId}`}>
+                    <img className={s.posterImage} src={posterUrl ? `${POSTER_PATH}${posterUrl}` : POSTER_NULL} alt={title}/>
                     <span className={`${s.rating} ${getRatingClass(voteAverage)}`}>{(voteAverage).toFixed(1)}</span>
                 </a>
                 <FavoriteButton isFavorite={isFavorite} onToggle={toggleFavorite} className={s.favoriteButton}/>

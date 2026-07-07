@@ -1,0 +1,172 @@
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-block: 24px;
+}
+
+/* MAIN CONTENT STYLES */
+
+.mainContent {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 32px;
+}
+
+.imageContainer {
+    width: 100%;
+    max-width: 320px;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.topHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.bottomHeader {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 16px;
+}
+
+.genresContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.genresList {
+    display: flex;
+    gap: 16px;
+}
+
+/* MAIN CONTENT ELEMENTS STYLES */
+
+.backButton {
+    color: var(--text-primary);
+    padding: 6px 12px;
+    background-color: transparent;
+    border: var(--button-border-color) solid 1px;
+    border-radius: 20px;
+}
+.backButton:hover {
+    transition: 0.2s ease;
+    transform: scale(1.02);
+}
+
+.spanText {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--spanText-primary);
+}
+
+.paragraphText {
+    color: var(--spanText-primary);
+    font-size: 20px;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: var(--color-white);
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.ratingLow {
+    background-color: var(--color-red);
+}
+
+.ratingMedium {
+    background-color: var(--color-yellow-400);
+}
+
+.ratingHigh {
+    background-color: var(--color-green);
+}
+
+.genresText {
+    font-weight: normal;
+}
+
+.genresElement {
+    background-color: var(--bg-button-primary);
+    border-radius: 16px;
+    padding: 8px;
+    color: var(--text-primary)
+}
+
+
+/* CAST STYLES */
+
+.cast {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.castHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.actorsRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* SIMILAR MOVIES STYLES */
+
+.similarMovies {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.cardRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.similarHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
