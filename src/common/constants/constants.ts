@@ -3,9 +3,11 @@ export const FAVORITES_KEY = "Favorites" as const
 
 export const BACKDROP_PATH = "https://image.tmdb.org/t/p/original/"
 export const POSTER_PATH = "https://image.tmdb.org/t/p/w185"
+export const POSTER_DETAILS_PATH = "https://image.tmdb.org/t/p/w342"
 
 export const PATH = {
     Main: '/',
+    Movie: '/movie/:id',
     Movies: '/movies/:category',
     Filtered: '/filtered-movies',
     Search: '/search',

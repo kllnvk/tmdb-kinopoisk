@@ -19,7 +19,7 @@ export const WelcomeSection = ({backdropPath}: Props) => {
             <div className={s.textContainer}>
                 <h1>Welcome</h1>
                 <h2>Browse highlighted titles from TMDB</h2>
-                <MovieSearchInput submitFunc={onSubmitHandler} />
+                <MovieSearchInput submitFunc={onSubmitHandler} initialValue={""}/>
             </div>
         </section>
     )

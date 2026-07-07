@@ -9,21 +9,28 @@ import s from "./SearchPage.module.css"
 export const SearchPage = () => {
 
     const [searchParams, setSearchParams] = useSearchParams();
-    const [trigger, {data, isLoading, isError}] = useLazyGetMoviesBySearchQuery();
+    const [trigger, {data, isLoading}] = useLazyGetMoviesBySearchQuery();
     const [page, setPage] = useState(1);
 
+
     const searchTitle = searchParams.get('query') || '';
+    const [isFirstSearch, setIsFirstSearch] = useState(!(searchTitle.length > 0));
 
     const handleSearch = (title: string) => {
         setSearchParams({query: title});
         setPage(1);
+        setIsFirstSearch(false)
     }
 
     useEffect(() => {
-        trigger({query: searchTitle, page: page});
+        if (searchTitle.trim().length > 0) {
+            trigger({query: searchTitle, page: page});
+        }
+
     }, [page, searchTitle, trigger]);
 
     const hasResult = data?.results && data.results.length > 0;
+    const isEmptyResult = data?.results && data.results.length === 0;
 
     return (
         <div className={s.container}>
@@ -34,16 +41,17 @@ export const SearchPage = () => {
                     {searchTitle.trim().length > 0 && !isLoading && (
                         <h2>Results for "{searchTitle}"</h2>
                     )}
-                    {isError && (<p>
-                        {`No matches for ${ searchTitle }`}
+                    {isEmptyResult && (<p>
+                        {`No matches for ${searchTitle}`}
                     </p>)}
+                    {isFirstSearch && (<p>Enter a movie title to start searching.</p>)}
                     <div className={s.moviesCard}>
-                        {hasResult ?
+                        {hasResult &&
                             data?.results?.map((movie) => (
                                 <MovieCard key={movie.id} movieId={movie.id} posterUrl={movie.poster_path}
                                            title={movie.title}
                                            voteAverage={movie.vote_average}/>
-                            )) : <p>Enter a movie title to start searching.</p>}
+                            ))}
                     </div>
                     {hasResult && data.total_pages > page && (
                         <Pagination currentPage={page} setCurrentPage={setPage} pagesCount={data.total_pages}/>
