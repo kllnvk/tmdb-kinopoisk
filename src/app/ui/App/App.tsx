@@ -3,6 +3,7 @@ import {Routing} from "@/app/routing/Routing";
 import {ThemeProvider} from "@/app/ui/ThemeProvider/ThemeProvider";
 import {Footer, Header} from "@/common/components";
 import {useSelector} from "react-redux";
+import {ToastContainer} from "react-toastify";
 import s from "./App.module.css"
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
                     <Routing/>
                     </div>
                 </main>
+                <ToastContainer />
                 <Footer/>
             </div>
         </ThemeProvider>

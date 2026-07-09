@@ -1,7 +1,7 @@
 import {Pagination} from "@/common/components/Pagintation/Pagination";
 import {categories} from "@/common/constants";
+import type {Category} from "@/common/schemas";
 import {useGetMoviesByCategoryQuery} from "@/features/movies/api/moviesApi";
-import type {Category} from "@/features/movies/api/moviesApi.types";
 import {MovieCard} from "@/features/movies/ui/movieCard/MovieCard";
 import {useState} from "react";
 import {NavLink, useParams} from "react-router";

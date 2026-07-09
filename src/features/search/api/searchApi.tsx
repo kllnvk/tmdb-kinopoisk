@@ -1,6 +1,7 @@
 import {baseApi} from "@/app/api/baseApi";
+import {type MoviesResponseWithFavorite, MoviesResponseWithFavoriteSchema} from "@/common/schemas";
 import {transformMovieResponse} from "@/common/utils";
-import type {MoviesResponseWithFavorite} from "@/features/movies/api/moviesApi.types";
+import {toast} from "react-toastify";
 
 
 export const searchApi = baseApi.injectEndpoints({
@@ -12,6 +13,11 @@ export const searchApi = baseApi.injectEndpoints({
                         query, page
                     }
                 }
+            },
+            responseSchema: MoviesResponseWithFavoriteSchema,
+            catchSchemaFailure: err => {
+                toast.error('Zod error. Details in the console')
+                return {status: 'CUSTOM_ERROR', error: 'Schema validation failed', data: err.issues}
             },
             transformResponse: transformMovieResponse,
             keepUnusedDataFor: 60,
