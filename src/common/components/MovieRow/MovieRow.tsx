@@ -1,4 +1,4 @@
-import type {MovieWithFavorite} from "@/features/movies/api/moviesApi.types";
+import type {MovieWithFavorite} from "@/common/schemas";
 import {MovieCard} from "@/features/movies/ui/movieCard/MovieCard";
 import {useNavigate} from "react-router";
 import s from "./MovieRow.module.css"
