@@ -1,3 +1,4 @@
+import {LinearProgress} from "@/common/components/LinearProgress/LinearProgress";
 import {Pagination} from "@/common/components/Pagintation/Pagination";
 import {categories} from "@/common/constants";
 import type {Category} from "@/common/schemas";
@@ -11,11 +12,11 @@ export const CategoryPage = () => {
 
     const {category = "popular"} = useParams<{ category: Category }>()
     const [page, setPages] = useState(1)
-    const {data} = useGetMoviesByCategoryQuery({category, params: {page: page}});
-
+    const {data, isFetching} = useGetMoviesByCategoryQuery({category, params: {page: page}});
 
     return (
         <div className={s.container}>
+            {isFetching && <LinearProgress />}
             <section className={s.page}>
                 <div className={s.buttonsContainer}>
                     {categories.map(({path, label}) => (
@@ -35,7 +36,7 @@ export const CategoryPage = () => {
                 <div className={s.wrapper}>
                     <section className={s.moviesCards}>
                         {data?.results?.map((movie) => (
-                            <MovieCard key={movie.id} movieId={movie.id} posterUrl={movie.poster_path}
+                            <MovieCard key={movie.id} movieId={movie.id} posterUrl={movie.poster_path ? movie.poster_path : ""}
                                        title={movie.title}
                                        voteAverage={movie.vote_average}/>
                         ))}

@@ -1,3 +1,4 @@
+import {LinearProgress} from "@/common/components/LinearProgress/LinearProgress";
 import {Pagination} from "@/common/components/Pagintation/Pagination";
 import {sortBy} from "@/common/enums";
 import type {Genre, SortBy} from "@/common/schemas";
@@ -31,7 +32,7 @@ export const FilteredPage = () => {
     const [genresList, setGenresList] = useState<Genre[] | []>([]);
     const [page, setPage] = useState(1);
     const {data: genres} = useGetMovieGenresQuery()
-    const {data: filteredMovies} = useGetMoviesByFilterQuery({
+    const {data: filteredMovies, isFetching} = useGetMoviesByFilterQuery({
         params: {
             page,
             sortBy: sort,
@@ -80,6 +81,7 @@ export const FilteredPage = () => {
 
     return (
         <div className={s.container}>
+            {isFetching && <LinearProgress />}
             <section className={s.page}>
                 <div className={s.content}>
                     <div className={s.filtersContainer}>
@@ -116,7 +118,7 @@ export const FilteredPage = () => {
                     <div className={s.moviesContainer}>
                         <div className={s.moviesGrid}>
                             {filteredMovies?.results?.map((movie) => (
-                                <MovieCard key={movie.id} movieId={movie.id} posterUrl={movie.poster_path}
+                                <MovieCard key={movie.id} movieId={movie.id} posterUrl={movie.poster_path ? movie.poster_path : ""}
                                            title={movie.title}
                                            voteAverage={movie.vote_average}/>
                             ))}

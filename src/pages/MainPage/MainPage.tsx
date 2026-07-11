@@ -1,4 +1,5 @@
 import {MovieRow} from "@/common/components";
+import {LinearProgress} from "@/common/components/LinearProgress/LinearProgress";
 import {BACKDROP_PATH} from "@/common/constants";
 import {getRandomItem} from "@/common/utils";
 import {useGetMoviesByCategoryQuery} from "@/features/movies/api/moviesApi";
@@ -6,7 +7,7 @@ import {WelcomeSection} from "@/pages/MainPage/WelcomeSection/WelcomeSection";
 import s from './MainPage.module.css'
 
 export const MainPage = () => {
-    const {data: popularData} = useGetMoviesByCategoryQuery({category: "popular", params: {page: 1}});
+    const {data: popularData, isFetching} = useGetMoviesByCategoryQuery({category: "popular", params: {page: 1}});
     const {data: nowPlayingData} = useGetMoviesByCategoryQuery({category: "now_playing", params: {page: 1}});
     const {data: upComingData} = useGetMoviesByCategoryQuery({category: "upcoming", params: {page: 1}});
     const {data: topRatedData} = useGetMoviesByCategoryQuery({category: "top_rated", params: {page: 1}});
@@ -18,6 +19,7 @@ export const MainPage = () => {
 
     return (
         <div className={s.container}>
+            {isFetching && <LinearProgress />}
             <section className={s.pageSection}>
                 <section className={s.mainSection}>
                     <WelcomeSection backdropPath={backdropPath}/>

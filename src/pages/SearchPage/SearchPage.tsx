@@ -1,3 +1,4 @@
+import {LinearProgress} from "@/common/components/LinearProgress/LinearProgress";
 import {Pagination} from "@/common/components/Pagintation/Pagination";
 import {MovieCard} from "@/features/movies/ui/movieCard/MovieCard";
 import {useLazyGetMoviesBySearchQuery} from "@/features/search/api/searchApi";
@@ -9,7 +10,7 @@ import s from "./SearchPage.module.css"
 export const SearchPage = () => {
 
     const [searchParams, setSearchParams] = useSearchParams();
-    const [trigger, {data, isLoading}] = useLazyGetMoviesBySearchQuery();
+    const [trigger, {data, isLoading, isFetching}] = useLazyGetMoviesBySearchQuery();
     const [page, setPage] = useState(1);
 
 
@@ -34,6 +35,7 @@ export const SearchPage = () => {
 
     return (
         <div className={s.container}>
+            {isFetching && <LinearProgress />}
             <section className={s.page}>
                 <h1>Search Page</h1>
                 <MovieSearchInput submitFunc={handleSearch} initialValue={searchTitle}/>
@@ -48,7 +50,7 @@ export const SearchPage = () => {
                     <div className={s.moviesCard}>
                         {hasResult &&
                             data?.results?.map((movie) => (
-                                <MovieCard key={movie.id} movieId={movie.id} posterUrl={movie.poster_path}
+                                <MovieCard key={movie.id} movieId={movie.id} posterUrl={movie.poster_path ? movie.poster_path : ""}
                                            title={movie.title}
                                            voteAverage={movie.vote_average}/>
                             ))}
