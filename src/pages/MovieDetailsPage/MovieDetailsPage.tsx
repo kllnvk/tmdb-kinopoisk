@@ -1,4 +1,5 @@
 import {ActorCard} from "@/common/components/ActorCard/ActorCard";
+import {LinearProgress} from "@/common/components/LinearProgress/LinearProgress";
 import {POSTER_DETAILS_PATH, POSTER_NULL} from "@/common/constants";
 import {
     useGetMovieCreditsQuery,
@@ -13,7 +14,7 @@ export const MovieDetailsPage = () => {
     const navigate = useNavigate();
     const {id} = useParams<{ id: string }>();
     const movieId = id ? parseInt(id) : 1
-    const {data: movieDetails, isLoading} = useGetMovieDetailsQuery({movieId: movieId}, {skip: movieId <= 0});
+    const {data: movieDetails, isLoading, isFetching} = useGetMovieDetailsQuery({movieId: movieId}, {skip: movieId <= 0});
     const {data: moviesCredits} = useGetMovieCreditsQuery({movieId: movieId}, {skip: movieId <= 0});
     const {data: similarMovies} = useGetSimilarMoviesQuery({movieId: movieId, params: {page: 1}}, {skip: movieId <= 0});
 
@@ -49,6 +50,7 @@ export const MovieDetailsPage = () => {
 
     return (
         <div className={s.container}>
+            {isFetching && <LinearProgress />}
             <section className={s.page}>
                 <section className={s.mainContent}>
                     <div className={s.imageContainer}>
