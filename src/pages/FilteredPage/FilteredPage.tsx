@@ -118,7 +118,7 @@ export const FilteredPage = () => {
                     <div className={s.moviesContainer}>
                         <div className={s.moviesGrid}>
                             {filteredMovies?.results?.map((movie) => (
-                                <MovieCard key={movie.id} movieId={movie.id} posterUrl={movie.poster_path ? movie.poster_path : ""}
+                                <MovieCard key={movie.id} movieId={movie.id} posterUrl={movie.poster_path}
                                            title={movie.title}
                                            voteAverage={movie.vote_average}/>
                             ))}

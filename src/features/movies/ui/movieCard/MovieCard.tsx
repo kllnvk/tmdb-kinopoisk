@@ -7,7 +7,7 @@ import s from "./MovieCard.module.css"
 
 type Props = {
     movieId: number,
-    posterUrl: string,
+    posterUrl: string | null,
     title: string,
     voteAverage: number,
 }

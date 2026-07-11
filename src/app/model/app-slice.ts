@@ -46,7 +46,7 @@ export const appReducer = appSlice.reducer
 export type ThemeMode = "light" | "dark";
 export type Movie = {
     id: number,
-    posterUrl: string,
+    posterUrl: string | null,
     title: string,
     voteAverage: number,
 }

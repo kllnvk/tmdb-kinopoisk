@@ -36,7 +36,7 @@ export const CategoryPage = () => {
                 <div className={s.wrapper}>
                     <section className={s.moviesCards}>
                         {data?.results?.map((movie) => (
-                            <MovieCard key={movie.id} movieId={movie.id} posterUrl={movie.poster_path ? movie.poster_path : ""}
+                            <MovieCard key={movie.id} movieId={movie.id} posterUrl={movie.poster_path}
                                        title={movie.title}
                                        voteAverage={movie.vote_average}/>
                         ))}
